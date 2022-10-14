@@ -4,7 +4,7 @@
 ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ
 «САХАЛИНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ»</p>
 <br><br><br><br><br><br>
-<p align = "center">Институт естественных наук и техносферной безопасности<br>Кафедра информатики<br>Хроменков В.А.</p>
+<p align = "center">Институт естественных наук и техносферной безопасности<br>Кафедра информатики<br>Хроменков Владимир Александрович</p>
 <br><br><br>
 <p align = "center">Лабораторная работа №3<br>«Основы языка <strong>JavaScript</strong>»<br>01.03.02 Прикладная математика и информатика</p>
 <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -235,16 +235,11 @@
 
     Создайте страницу, которая запрашивает `x` и `n`, а затем выводит результат `pow(x,n)`.
 
-## <img src ="img/codewars_logo.svg" height = 32px> [Codewars](https://www.codewars.com)
 
-![7kyu](img/codewars_7kyu.png)
-
-23.  [Highest and Lowest](https://www.codewars.com/kata/highest-and-lowest)
+23. [Highest and Lowest](https://www.codewars.com/kata/highest-and-lowest)
 24. [Disemvowel Trolls](https://www.codewars.com/kata/disemvowel-trolls)
 25. [Isograms](https://www.codewars.com/kata/isograms)
 26. [Digits Explosion](https://www.codewars.com/kata/digits-explosion)  
-
-![6kyu](img/codewars_6kyu.png)
 
 27. [Handshake Problem](https://www.codewars.com/kata/handshake-problem)
 28. [Duplicate Encoder](https://www.codewars.com/kata/duplicate-encoder)
@@ -259,251 +254,435 @@
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Лабораторная 3</title>
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                zad1();
+                zad2();
+                zad3();
+                zad4();
+                zad5();
+                zad6();
+                zad7();
+                zad8();
+                zad9();
+                zad10();
+                zad11();
+                zad12();
+                zad13();
+                zad14();
+                zad15();
+                zad16();
+                zad17();
+                zad18();
+                zad19();
+                zad20();
+                zad21();
+            });
+        </script>
+        <h2>Задание 1</h2>
+        <div id="insert-1"></div><br>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаб. работа 3</title>
-    <script src="index.js" defer></script>
-</head>
+        <h2>Задание 2</h2>
+        <div id="insert-2"></div><br>
 
-<body>
-    <h1>pow(x,n)</h1>
-    <label for="x">x:</label><br>
-    <input type="text" id="x"><br>
-    <label for="n">n:</label><br>
-    <input type="text" id="n"><br>
-    <input type="submit" id="input">
-    <p id="out"></p>
-</body>
+        <h2>Задание 3</h2>
+        <div id="insert-3"></div><br>
 
+        <h2>Задание 4</h2>
+        <div id="insert-4"></div><br>
+
+        <h2>Задание 5</h2>
+        <div id="insert-5"></div><br>
+
+        <h2>Задание 6</h2>
+        <div id="insert-6"></div><br>
+
+        <h2>Задание 7</h2>
+        <div id="insert-7"></div><br>
+
+        <h2>Задание 8</h2>
+        <div id="insert-8"></div><br>
+
+        <h2>Задание 9</h2>
+        <div id="insert-9"></div><br>
+
+        <h2>Задание 10</h2>
+        <div id="insert-10"></div><br>
+
+        <h2>Задание 11</h2>
+        <div id="insert-11"></div><br>
+
+        <h2>Задание 12</h2>
+        <div id="insert-12"></div><br>
+
+        <h2>Задание 13</h2>
+        <div id="insert-13"></div><br>
+
+        <h2>Задание 14</h2>
+        <div id="insert-14"></div><br>
+
+        <h2>Задание 15</h2>
+        <div id="insert-15"></div><br>
+
+        <h2>Задание 16</h2>
+        <div id="insert-16"></div><br>
+
+        <h2>Задание 17</h2>
+        <div id="insert-17"></div><br>
+
+        <h2>Задание 18</h2>
+        <div id="insert-18"></div><br>
+
+        <h2>Задание 19</h2>
+        <div id="insert-19"></div><br>
+
+        <h2>Задание 20</h2>
+        <div id="insert-20"></div><br>
+
+        <h2>Задание 21</h2>
+        <div id="insert-21"></div><br>
+
+        <h2>Задание 22</h2>
+        <label for="x">x:    </label>
+        <input type="number" id="x"><br>
+        <label for="n">n:    </label>
+        <input type="number" id="n"><br><br>
+        <button type="button" onclick="zad22()">Посчитать</button><br>
+        <div id="insert-22"></div><br><br><br>
+
+        <script src="index.js"></script>   
+    </body>
 </html>
 ```
 
 ## JavaScript
 
 ```js
-var cssRule =
-    "color: rgb(249, 162, 34);" +
-    "font-weight: bold;"
+//Дополнительные функции вывода
+function insertInPage(where, that, isBr = true){
+    if(isBr) document.getElementById(where).innerHTML = that + "<br>";
+    else document.getElementById(where).innerHTML = that;
+}
+function appendInPage(where, that, isBr = true){
+    if(isBr) document.getElementById(where).innerHTML += that + "<br>";
+    else document.getElementById(where).innerHTML += that;
+}
+//<--------------------------->//
 
-//1.
-console.log("%c   1. Что выведет код ниже?", cssRule);
-console.log("null || 2 || undefined");
-console.log("Ответ: 2");
+function zad1(){
+    //alert(null || 2 || undefined);
 
-//2.
-console.log("%c   2. Что выведет код ниже?", cssRule);
-console.log("alert(1) || 2 || alert(3)");
-console.log("Ответ: 2");
+    insertInPage("insert-1", "Что выведет код ниже?");
+    appendInPage("insert-1", "alert(null || 2 || undefined);");
+    appendInPage("insert-1", "Ответ: 2");
+}
 
-//3.
-console.log("%c   3. Что выведет код ниже?", cssRule);
-console.log("1 && null && 2");
-console.log("Ответ: null");
+function zad2(){
+    //alert(alert(1) || 2 || alert(3));
 
-//4.
-console.log("%c   4. Что выведет alert (И)?", cssRule);
-console.log("alert(1) && alert(2)");
-console.log("Ответ: undefined")
+    insertInPage("insert-2", "Что выведет код ниже?");
+    appendInPage("insert-2", "alert(alert(1) || 2 || alert(3));");
+    appendInPage("insert-2", "Ответ: 2");
+}
 
-//5.
-console.log("%c   5. Что выведет этот код?", cssRule);
-console.log("null || 2 && 3 || 4");
-console.log("Ответ: 3");
+function zad3(){
+    //alert(1 && null && 2);
 
-//6.
-console.log("%c   6. Напишите условие if для проверки, что переменная age находится в диапазоне между 14 и 90 включительно. ", cssRule);
-console.log("if (age >= 14 && age <= 90)");
+    insertInPage("insert-3", "Что выведет код ниже?");
+    appendInPage("insert-3", "alert(1 && null && 2);");
+    appendInPage("insert-3", "Ответ: null");
+}
 
-//7.
-console.log("%c   7. Напишите условие if для проверки, что значение переменной age НЕ находится в диапазоне 14 и 90 включительно.", cssRule);
-console.log("1) if (!(age >= 14 && age <= 90))");
-console.log("2) if (age < 14 || age > 90)");
+function zad4(){
+    //alert(alert(1) && alert(2));
 
-//8.
-console.log("%c   8. Какие из перечисленных ниже alert выполнятся", cssRule);
-console.log("%c Какие конкретно значения будут результатами выражений в условиях if(...)?", cssRule);
-console.log("if (-1 || 0) alert('first');");
-console.log("Ответ: " + (-1 || 0));
-console.log("if (-1 && 0) alert('second');");
-console.log("Ответ: " + (-1 && 0));
-console.log("if (null || -1 && 1) alert('third');");
-console.log("Ответ: " + (null || -1 && 1));
+    insertInPage("insert-4", "Что выведет код ниже?");
+    appendInPage("insert-4", "alert(alert(1) && alert(2));");
+    appendInPage("insert-4", "Ответ: undefined");
+}
 
-//9.
-console.log("%c   9. Проверка логина", cssRule);
-var login = prompt("Введите логин:", "Админ");
-if (login === null)
-    alert("Отменено");
-else if (login === "Админ") {
-    var pass = prompt("Введите пароль:", "Я главный");
-    if (pass === null)
+function zad5(){
+    //alert(null || 2 && 3 || 4);
+
+    insertInPage("insert-5", "Что выведет код ниже?");
+    appendInPage("insert-5", "alert(null || 2 && 3 || 4);");
+    appendInPage("insert-5", "Ответ: 3");
+}
+
+function zad6(){
+    var ages = [13, 14, 46, 90, 91];
+    insertInPage("insert-6", "Напишите условие if для проверки, что значение переменной age НЕ находится в диапазоне 14 и 90 включительно.");
+    appendInPage("insert-6", "Ответ: if (age >= 14 && age <= 90)");
+    
+    ages.forEach(function(age, i, ages) {
+        appendInPage("insert-6", age, false);
+        if (age >= 14 && age <= 90)
+            appendInPage("insert-6", " - Подходит");
+        else
+            appendInPage("insert-6", " - Не подходит");
+    });
+}
+
+function zad7(){
+    var ages = [13,14,46,90,91];
+    insertInPage("insert-7", "Напишите условие if для проверки, что переменная age находится в диапазоне между 14 и 90 включительно.");
+    appendInPage("insert-7", "Ответ 1: if (!(age >= 14 && age <= 90))");
+    appendInPage("insert-7", "Ответ 2: if (age < 14 || age > 90)");
+    
+    ages.forEach(function(age, i, ages) {
+        appendInPage("insert-7", age, false);
+        if (age < 14 || age > 90)
+            appendInPage("insert-7", "Вне диапозона");
+        else
+            appendInPage("insert-7", "В диапозоне");
+    });
+}
+
+function zad8(){
+    insertInPage("insert-8", "Какие из перечисленных ниже alert выполнятся");
+    appendInPage("insert-8", "Какие конкретно значения будут результатами выражений в условиях if(...)?");
+    
+    appendInPage("insert-8", "if (-1 || 0) alert('first');");
+    appendInPage("insert-8", "Ответ 1: " + (-1 || 0));
+
+    appendInPage("insert-8", "if (-1 && 0) alert('second');");
+    appendInPage("insert-8", "Ответ 2: " + (-1 && 0));
+
+    appendInPage("insert-8", "if (null || -1 && 1) alert('third');");
+    appendInPage("insert-8", "Ответ 3: " + (null || -1 && 1));
+}
+
+function zad9(){
+    insertInPage("insert-9", "Проверка логина");
+    appendInPage("insert-9", "login: " + login);
+    appendInPage("insert-9", "pass: " + pass);
+
+    var login = prompt("Введите логин:", "Админ");
+    if (login === null){
         alert("Отменено");
-    else if (pass === "Я главный")
-        alert("Здравствуйте!");
-    else
-        alert("Неверный пароль");
-}
-else
-    alert("Я вас не знаю");
-
-
-//10.
-console.log("%c   10. Какое последнее значение выведет этот код? Почему?", cssRule);
-
-console.log("let i = 3;");
-console.log("while (i) {");
-console.log("    alert(i--);");
-console.log("}");
-console.log("   Ответ: на последней итерации выведет 1, после этого значение переменной i = 0 и цикл прекратит свое выполнение");
-
-//11.
-console.log("%c   11. Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом.", cssRule);
-console.log("%c Оба цикла выводят alert с одинаковыми значениями или нет?", cssRule);
-console.log("   1) Префиксный вариант ++i:");
-console.log("let i = 0;");
-console.log("while (++i < 5) alert( i );");
-console.log("   Вывод: 1, 2, 3, 4");
-console.log("   2) Постфиксный вариант i++");
-console.log("let i = 0;");
-console.log("while (i++ < 5) alert( i );");
-console.log("   Вывод: 1, 2, 3, 4, 5");
-
-//12.
-console.log("%c   12. Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом. Оба цикла выведут alert с одинаковыми значениями или нет?", cssRule);
-console.log("   1) Постфиксная форма:");
-console.log("for (let i = 0; i < 5; i++) alert( i );");
-console.log("Ответ: 0, 1, 2, 3, 4")
-console.log("   2) Префиксная форма:");
-console.log("for (let i = 0; i < 5; ++i) alert( i );");
-console.log("Ответ: 0,1, 2, 3, 4")
-
-//13.
-console.log("%c  13. При помощи цикла for выведите чётные числа от 2 до 10.", cssRule)
-for (let i = 2; i < 11; i++) {
-    if (i % 2 == 0)
-        console.log(i);
-}
-
-//14.
-console.log("%c    14. Перепишите код, заменив цикл for на while, без изменения поведения цикла.", cssRule);
-console.log("for (let i = 0; i < 3; i++) {");
-console.log("  alert( `number ${i}!` );");
-console.log("}");
-console.log("\n");
-console.log("let i = -1;");
-console.log("while (i++ < 2) {");
-console.log("    alert(`number ${i}!`);");
-console.log("}");
-
-//15.
-do {
-    var num = prompt("Введите число большее 100");
-} while (num <= 100 && num != null);
-
-//16.
-console.log("%c   16. Простые числа", cssRule);
-const primes = [];
-var n = prompt("16. Простые числа. Введите n:", 10);
-for (let i = 2; i < n; i++) {
-    flag = true;
-    for (let j = 2; j <= Math.sqrt(i); j++) {
-        if (i % j === 0)
-            flag = false;
+        appendInPage("insert-9", "Отменено");
     }
-    if (flag === true)
-        primes.push(i);
+    else if (login === "Админ") {
+        var pass = prompt("Введите пароль:", "Я главный");
+        if (pass === null){
+            alert("Отменено");
+            appendInPage("insert-9", "Отменено");
+        }
+        else if (pass === "Я главный"){
+            alert("Здравствуйте!");
+            appendInPage("insert-9", "Здравствуйте!");
+        }
+        else{
+            alert("Неверный пароль");
+            appendInPage("insert-9", "Неверный пароль");
+        }
+    }
+    else {
+        alert("Я вас не знаю");
+        appendInPage("insert-9", "");
+    }
 }
-alert("Ответ в консоли!");
-console.log(primes);
 
-//17.
-console.log("%c   17. Напишите if..else, соответствующий следующему switch:", cssRule);
-console.log("switch (browser) {");
-console.log("  case 'Edge':");
-console.log(`    alert( "You've got the Edge!" );`);
-console.log("    break;");
-console.log("  case 'Chrome':");
-console.log("  case 'Firefox':");
-console.log("  case 'Safari':");
-console.log("  case 'Opera':");
-console.log("    alert( 'Okay we support these browsers too' );");
-console.log("    break;");
-console.log("  default:");
-console.log("    alert( 'We hope that this page looks ok!' );");
-console.log("}");
-console.log();
-console.log("if (browser == 'Edge')");
-console.log(`    alert( "You've got the Edge!" );`);
-console.log(`else if (browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera')`);
-console.log("    alert( 'Okay we support these browsers too' );");
-console.log("else");
-console.log("    alert( 'We hope that this page looks ok!' );");
+function zad10(){
+    insertInPage("insert-10", "Какое последнее значение выведет этот код? Почему?");
+    appendInPage("insert-10", "let i = 3;");
+    appendInPage("insert-10", "while (i) {");
+    appendInPage("insert-10", "    alert(i--);");
+    appendInPage("insert-10", "}");
+    appendInPage("insert-10", "Ответ: на последней итерации выведет 1, после");
+    appendInPage("insert-10", "этого значение переменной i = 0 и цикл прекратит свое выполнение");
+}
 
-//18.
-console.log("%c   18. Перепишите код с использованием одной конструкции switch:", cssRule);
-console.log(" const number = +prompt('Введите число между 0 и 3', '');");
-console.log("if (number === 0) {");
-console.log("  alert('Вы ввели число 0');");
-console.log("}");
-console.log("if (number === 1) {");
-console.log("  alert('Вы ввели число 1');");
-console.log("}");
-console.log("if (number === 2 || number === 3) {");
-console.log("  alert('Вы ввели число 2, а может и 3');");
-console.log("}");
-console.log();
-console.log("switch (number) {");
-console.log("    case 0:");
-console.log("        alert('Вы ввели число 0');");
-console.log("        break;");
-console.log("    case 1:");
-console.log("        alert('Вы ввели число 1');");
-console.log("        break;");
-console.log("    case 2:");
-console.log("    case 3:");
-console.log("        alert('Вы ввели число 2, а может и 3');");
-console.log("        break;");
-console.log("    default:");
-console.log("        break;");
-console.log("}");
+function zad11(){
+    //11.
+    insertInPage("insert-11", "Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом.");
+    appendInPage("insert-11", "Оба цикла выводят alert с одинаковыми значениями или нет?");
 
-//19.
-console.log("%c   19. Следующая функция возвращает true, если параметр age больше 18. В ином случае она запрашивает подтверждение через confirm и возвращает его результат:", cssRule);
-console.log("function checkAge(age) {");
-console.log("  if (age > 18) {");
-console.log("    return true;");
-console.log("  } else {");
-console.log("    // ...");
-console.log("    return confirm('Родители разрешили?');");
-console.log("  }");
-console.log("}");
-console.log("%c Будет ли эта функция работать как-то иначе, если убрать else?", cssRule);
-console.log("%c Есть ли хоть одно отличие в поведении этого варианта?", cssRule);
-console.log("Ответ: отличий нет");
+    appendInPage("insert-11", "1) Префиксный вариант ++i:");
+    appendInPage("insert-11", "let i = 0;");
+    appendInPage("insert-11", "while (++i < 5) alert( i );");
+    appendInPage("insert-11", "   Вывод: 1, 2, 3, 4");
 
-//20.
-console.log("%c   20. Перепишите функцию, чтобы она делала то же самое, но без if, в одну строку.", cssRule);
-console.log("%c Сделайте два варианта функции checkAge:", cssRule);
-console.log("    1) Используя оператор ?");
-console.log("age > 18 ? true : confirm('Родители разрешили?');");
-console.log("    2) Используя оператор ||");
-console.log("age > 18 || confirm('Родители разрешили?')");
+    appendInPage("insert-11", "<br>",false);
 
-//21. Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b.
-console.log("%c   21. Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b.", cssRule);
+    appendInPage("insert-11", "2) Постфиксный вариант i++");
+    appendInPage("insert-11", "let i = 0;");
+    appendInPage("insert-11", "while (i++ < 5) alert( i );");
+    appendInPage("insert-11", "   Вывод: 1, 2, 3, 4, 5");
+
+}
+
+function zad12(){
+    insertInPage("insert-12", "Для каждого цикла запишите, какие значения он выведет. Потом сравните с ответом. ");
+    appendInPage("insert-12", "Оба цикла выведут alert с одинаковыми значениями или нет?");
+    
+    appendInPage("insert-12", "1) Постфиксная форма:");
+    appendInPage("insert-12", "for (let i = 0; i < 5; i++) alert( i );");
+    appendInPage("insert-12", "Ответ: 0, 1, 2, 3, 4")
+
+    appendInPage("insert-12", "<br>",false);
+
+    appendInPage("insert-12", "2) Префиксная форма:");
+    appendInPage("insert-12", "for (let i = 0; i < 5; ++i) alert( i );");
+    appendInPage("insert-12", "Ответ: 0,1, 2, 3, 4")
+}
+
+function zad13(){
+    insertInPage("insert-13", "При помощи цикла for выведите чётные числа от 2 до 10.");
+
+    for (let i = 2; i < 11; i++) {
+        if (i % 2 == 0)
+            appendInPage("insert-13", i + "    ", false);
+    }
+
+    appendInPage("insert-13", "<br>", false);
+}
+
+function zad14(){
+    insertInPage("insert-14", "Перепишите код, заменив цикл for на while, без изменения поведения цикла.");
+
+    appendInPage("insert-14", "for (let i = 0; i < 3; i++) {");
+    appendInPage("insert-14", "  alert( `number ${i}!` );");
+    appendInPage("insert-14", "}");
+
+    appendInPage("insert-14", "<br>", false);
+
+    appendInPage("insert-14", "let i = -1;");
+    appendInPage("insert-14", "while (i++ < 2) {");
+    appendInPage("insert-14", "    alert(`number ${i}!`);");
+    appendInPage("insert-14", "}");
+}
+
+function zad15(){
+    var num = null;
+    do {
+        num = prompt("Введите число большее 100");
+    } while (num <= 100 && num != null);
+
+    insertInPage("insert-15", "Вы ввели число " + num);
+}
+
+function zad16(){
+    insertInPage("insert-16", "Простые числа");
+
+    const primes = [];
+    var n = prompt("16. Простые числа. Введите n:", 10);
+    for (let i = 2; i < n; i++) {
+        flag = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+            if (i % j === 0)
+                flag = false;
+        }
+        if (flag === true)
+            primes.push(i);
+    }
+
+    appendInPage("insert-16", primes);
+}
+
+function zad17(){
+    insertInPage("insert-17", "Напишите if..else, соответствующий следующему switch:");
+    appendInPage("insert-17", "switch (browser) {");
+    appendInPage("insert-17", "  case 'Edge':");
+    appendInPage("insert-17", `    alert( "You've got the Edge!" );`);
+    appendInPage("insert-17", "    break;");
+    appendInPage("insert-17", "  case 'Chrome':");
+    appendInPage("insert-17", "  case 'Firefox':");
+    appendInPage("insert-17", "  case 'Safari':");
+    appendInPage("insert-17", "  case 'Opera':");
+    appendInPage("insert-17", "    alert( 'Okay we support these browsers too' );");
+    appendInPage("insert-17", "    break;");
+    appendInPage("insert-17", "  default:");
+    appendInPage("insert-17", "    alert( 'We hope that this page looks ok!' );");
+    appendInPage("insert-17", "}");
+    
+    appendInPage("insert-17", "<br>Ответ:<br>");
+
+    appendInPage("insert-17", "if (browser == 'Edge')");
+    appendInPage("insert-17", `    alert( "You've got the Edge!" );`);
+    appendInPage("insert-17", `else if (browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera')`);
+    appendInPage("insert-17", "    alert( 'Okay we support these browsers too' );");
+    appendInPage("insert-17", "else");
+    appendInPage("insert-17", "    alert( 'We hope that this page looks ok!' );");
+}
+
+function zad18(){
+    insertInPage("insert-18", "Перепишите код с использованием одной конструкции switch:");
+    appendInPage("insert-18", " const number = +prompt('Введите число между 0 и 3', '');");
+    appendInPage("insert-18", "if (number === 0) {");
+    appendInPage("insert-18", "  alert('Вы ввели число 0');");
+    appendInPage("insert-18", "}");
+    appendInPage("insert-18", "if (number === 1) {");
+    appendInPage("insert-18", "  alert('Вы ввели число 1');");
+    appendInPage("insert-18", "}");
+    appendInPage("insert-18", "if (number === 2 || number === 3) {");
+    appendInPage("insert-18", "  alert('Вы ввели число 2, а может и 3');");
+    appendInPage("insert-18", "}");
+    
+    appendInPage("insert-18", "<br>Ответ:<br>");
+
+    appendInPage("insert-18", "switch (number) {");
+    appendInPage("insert-18", "    case 0:");
+    appendInPage("insert-18", "        alert('Вы ввели число 0');");
+    appendInPage("insert-18", "        break;");
+    appendInPage("insert-18", "    case 1:");
+    appendInPage("insert-18", "        alert('Вы ввели число 1');");
+    appendInPage("insert-18", "        break;");
+    appendInPage("insert-18", "    case 2:");
+    appendInPage("insert-18", "    case 3:");
+    appendInPage("insert-18", "        alert('Вы ввели число 2, а может и 3');");
+    appendInPage("insert-18", "        break;");
+    appendInPage("insert-18", "    default:");
+    appendInPage("insert-18", "        break;");
+    appendInPage("insert-18", "}");
+}
+
+function zad19(){
+    insertInPage("insert-19", "Следующая функция возвращает true, если параметр age больше 18.");
+    appendInPage("insert-19", "В ином случае она запрашивает подтверждение через confirm и возвращает его результат:");
+    appendInPage("insert-19", "function checkAge(age) {");
+    appendInPage("insert-19", "  if (age > 18) {");
+    appendInPage("insert-19", "    return true;");
+    appendInPage("insert-19", "  } else {");
+    appendInPage("insert-19", "    // ...");
+    appendInPage("insert-19", "    return confirm('Родители разрешили?');");
+    appendInPage("insert-19", "  }");
+    appendInPage("insert-19", "}");
+
+    appendInPage("insert-19", "<br>",false);
+    
+    appendInPage("insert-19", "Будет ли эта функция работать как-то иначе, если убрать else?");
+    appendInPage("insert-19", "Есть ли хоть одно отличие в поведении этого варианта?");
+    appendInPage("insert-19", "Ответ: отличий нет");
+}
+
+function zad20(){
+    insertInPage("insert-20", "Перепишите функцию, чтобы она делала то же самое, но без if, в одну строку.");
+    appendInPage("insert-20", "Сделайте два варианта функции checkAge:");
+    
+    appendInPage("insert-20", "1) Используя оператор ?");
+    appendInPage("insert-20", "age > 18 ? true : confirm('Родители разрешили?');");
+
+    appendInPage("insert-20", "2) Используя оператор ||");
+    appendInPage("insert-20", "age > 18 || confirm('Родители разрешили?')");
+}
+
 function min(a, b) {
     return a < b ? a : b;
 }
-console.log("min(2, 5) = " + min(2, 5));
-console.log("min(3, -1) = " + min(3, -1));
-console.log("min(1, 1) = " + min(1, 1));
+function zad21(){
+    insertInPage("insert-21", "Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b.");
+    appendInPage("insert-21","min(2, 5) = " + min(2, 5));
+    appendInPage("insert-21","min(3, -1) = " + min(3, -1));
+    appendInPage("insert-21","min(1, 1) = " + min(1, 1));
+}
 
-//22. Напишите функцию pow(x,n)
-// считает только для n - целые числа
 function pow(x, n) {
     if (n === 0)
         return 1;
@@ -523,183 +702,16 @@ function pow(x, n) {
     return res;
 }
 
-document.getElementById("input").onclick = function () {
+function zad22(){
     let x = Number(document.getElementById("x").value);
     let n = Number(document.getElementById("n").value);
-    document.getElementById("out").innerHTML = "Результат: " + pow(x, n);
+    insertInPage("insert-22", "Результат: " + pow(x, n));
 }
 ```
 
-## <img src ="img/codewars_logo.svg" name = "codewars" height = 32px> [Codewars](https://www.codewars.com) ([Profile Link](https://www.codewars.com/users/SiML))
+## Codewars
 
 
-### [Highest and Lowest](https://www.codewars.com/kata/highest-and-lowest)
-
-```js
-function highAndLow(numbers){
-    numbers = numbers.split(' ');
-    let min = numbers[0];
-    let max = numbers[0];
-    
-    for (let i = 1; i < numbers.length; i++) {
-        parseInt(numbers[i]) < min && (min = numbers[i]);
-        parseInt(numbers[i]) > max && (max = numbers[i]);
-    }
-
-    return max + " " + min;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/1.PNG">
-</p>
-
-### [Disemvowel Trolls](https://www.codewars.com/kata/disemvowel-trolls)
-
-```js
-function disemvowel(str) {
-    return str.replace(/[aeiou]/ig, '');
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/2.PNG">
-</p>
-
-### [Isograms](https://www.codewars.com/kata/isograms)
-
-```js
-function isIsogram(str) {
-    str = str.toLowerCase();
-    let Dict = new Set();
-
-    for (let letter of str) {
-        if (Dict.has(letter))
-            return false;
-        Dict.add(letter);
-    }
-
-    return true;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/3.PNG">
-</p>
-
-### [Digits Explosion](https://www.codewars.com/kata/digits-explosion)
-
-```js
-function explode(s) {
-    let res = "";
-
-    for (let x of s.split('').map(Number)) {
-        res += x.toString().repeat(x);
-    }
-
-    return res;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/4.PNG">
-</p>
-
-### [Handshake Problem](https://www.codewars.com/kata/handshake-problem)
-
-```js
-function getParticipants(handshakes) {
-    if (handshakes <= 0)
-        return 0;
-
-    let p = 1;
-
-    do {
-        temp = ++p * (p - 1) / 2;
-    } while (temp < handshakes);
-
-    return p;
-}
-
-//"Сочетания" без повторений: n!/(k!(n-k)!)
-// k = 2
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/5.PNG">
-</p>
-
-### [Duplicate Encoder](https://www.codewars.com/kata/duplicate-encoder)
-
-```js
-function duplicateEncode(word) {
-    word = word.toLowerCase().split('');
-    counter = new Map()
-
-    let res = "";
-    for (const letter of word) {
-        if (counter.get(letter))
-            counter.set(letter, 2)
-        else
-            counter.set(letter, 1)
-    }
-
-    for (const letter of word) {
-        counter.get(letter) == 1 ? res += '(' : res += ')';
-    }
-
-    return res;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/6.PNG">
-</p>
-
-### [N-th Fibonacci](https://www.codewars.com/kata/n-th-fibonacci)
-
-```js
-function nthFibo(n) {
-    if (n === 1)
-        return 0;
-
-    if (n === 2)
-        return 1;
-
-    let one = 0, two = 1;
-    for (let i = 0; i < n - 2; i++) {
-        two += one;
-        one = two - one;
-    }
-
-    return two;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/7.PNG">
-</p>
-
-### [Multiples of 3 or 5](https://www.codewars.com/kata/multiples-of-3-or-5)
-
-```js
-function solution(number) {
-    if (number < 3)
-        return 0;
-
-    let sum = 0;
-    for (let i = 3; i < number; i++) {
-        if (i % 3 == 0 || i % 5 == 0)
-            sum += i;
-    }
-
-    return sum;
-}
-```
-
-<p align = "center">
-<img src = "img/codewars_screens/8.PNG">
-</p>
 
 ***
 
