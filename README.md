@@ -710,8 +710,130 @@ function zad22(){
 ```
 
 ## Codewars
+### [Профиль CodeWars](https://www.codewars.com/users/ZFGinc)
 
+Highest and Lowest
+```js
+function highAndLow(numbers){
+  var nums = numbers.split(` `).map(x => +x)
+  var min = nums[0];
+  var max = nums[0];
+  
+  for(let i = 1; i < nums.length; i++){
+    if(nums[i] < min) min = nums[i];
+    if(nums[i] > max) max = nums[i];
+  }
+  
+  return max+" "+min;
+}
+```
 
+Disemvowel Trolls
+```js
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '');
+}
+```
+
+Isograms
+```js
+function isIsogram(str){
+  str = str.toLowerCase();
+  let arr = [];
+  
+  for (let letter of str) {
+    if (arr.indexOf(letter) === -1) {
+      arr.push(letter)
+    }
+  }
+  
+   return arr.join("") === str;
+}
+```
+
+Digits Explosion
+```js
+function explode(s) {
+  var res = "";
+  for(let i = 0; i < s.length; i++){
+    let a = Number(s[i]);
+    for(let j = 0; j < a; j++){
+      res+=s[i];
+    }
+  }
+  return res;
+}
+```
+
+Handshake Problem
+```js
+function getParticipants(handshakes) {
+    let p = 1;
+    if (handshakes <= 0)
+        return 0;
+    do {
+        temp = ++p * (p - 1) / 2;
+    } while (temp < handshakes);
+    return p;
+}
+```
+
+Duplicate Encoder
+```js
+function duplicateEncode(word) {
+    word = word.toLowerCase().split('');
+    counter = new Map()
+
+    let res = "";
+    for (const letter of word) {
+        if (counter.get(letter))
+            counter.set(letter, 2)
+        else
+            counter.set(letter, 1)
+    }
+
+    for (const letter of word) {
+        counter.get(letter) == 1 ? res += '(' : res += ')';
+    }
+
+    return res;
+}
+```
+
+N-th Fibonacci
+```js
+function nthFibo(n) {
+    if (n === 1)
+        return 0;
+
+    if (n === 2)
+        return 1;
+
+    let one = 0, two = 1;
+    for (let i = 0; i < n - 2; i++) {
+        two += one;
+        one = two - one;
+    }
+
+    return two;
+}
+```
+
+Multiples of 3 or 5
+```js
+function solution(number) {
+    if (number < 3)
+        return 0;
+
+    let sum = 0;
+    for (let i = 3; i < number; i++) {
+        if (i % 3 == 0 || i % 5 == 0)
+            sum += i;
+    }
+
+    return sum;
+}
+```
 
 ***
 
